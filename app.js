@@ -1,24 +1,14 @@
-# Interview Algorithm Questions in Javascript() {...}
-*A mostly reasonable collection of technical software development interview questions try to solve using Javascript*
+//     Array Programs
 
-## Table of Contents
-1. [Array](#array)
-1. [Strings](#strings)
-1. [Stacks and Queues](#stacks-and-queues)
-1. [Recursion](#recursion)
-1. [Numbers](#numbers)
+/*   1.1Given an array of integers, find the largest product yielded from three of the integers**
+ 
+var unsortedArray = [-10, 7, 29, 30, 5, -10, -70];
 
-## Array
-<a name="array--product"></a><a name="1.1"></a>
-- **[1.1](#array--product) Given an array of integers, find the largest product yielded from three of the integers**
-  ```javascript
-  var unsortedArray = [-10, 7, 29, 30, 5, -10, -70];
+computeProduct(unsortedArray); // 21000
 
-  computeProduct(unsortedArray); // 21000
-
-  //Write your program here
-  
-  ```
+//Write your program here
+ 
+*/
 
 var unsortedArray = [-10, 7, 29, 30, 5, -10, -70];
 const computeProduct = (unsortedArray) => {
@@ -33,9 +23,9 @@ console.log(computeProduct(unsortedArray));
 
 
 
- 
-<a name="array--consecutive--sum"></a><a name="1.2"></a>
-- **[1.2](#array--consecutive--sum) Being told that an unsorted array contains (n - 1) of n consecutive numbers (where the bounds are defined), find the missing number in `O(n)` time**
+
+
+/*1.2 Being told that an unsorted array contains (n - 1) of n consecutive numbers (where the bounds are defined), find the missing number in `O(n)` time**
   ```javascript
   // The output of the function should be 8
   var arrayOfIntegers = [2, 5, 1, 4, 9, 6, 3, 7];
@@ -45,28 +35,32 @@ console.log(computeProduct(unsortedArray));
   //Write your program here
   
   ```
+  */
 
-<a name="array--unique"></a><a name="1.3"></a>
-- **[1.3](#array--unique) Removing duplicates of an array and returning an array of only unique elements**
-  ```javascript
-  // ES6 Implementation
+
+
+
+
+/*    1.3 Removing duplicates of an array and returning an array of only unique elements**
+  
   var array = [1, 2, 3, 5, 1, 5, 9, 1, 2, 8];
 
    //Write your program here
 
+*/
 
-  
-  ```
+
+
 var array = [1, 2, 3, 5, 1, 5, 9, 1, 2, 8];
 
-function uniqueArray(a){
+function uniqueArray(a) {
     var newArr = [];
     for (var i = 0; i < a.length; i++) {
         if (newArr.indexOf(a[i]) === -1) {
             newArr.push(a[i]);
         }
     }
-  return newArr;
+    return newArr;
 }
 
 uniqueArray(array);
@@ -74,7 +68,7 @@ console.log(uniqueArray(array));
 
 
 
-
+/*
 <a name="array--largest-difference"></a><a name="1.4"></a>
 - **[1.4](#array--largest-difference) Given an array of integers, find the largest difference between two elements such that the element of lesser value must come before the greater element**
   ```javascript
@@ -86,34 +80,36 @@ console.log(uniqueArray(array));
 
   ```
   
-<a name="array--product-other-than-itself"></a><a name="1.5"></a>
-- **[1.5](#array--product-other-than-itself) Given an array of integers, return an output array such that output[i] is equal to the product of all the elements in the array other than itself. (Solve this in O(n) without division)**
-  ```javascript
+1.5   Given an array of integers, return an output array such that output[i] is equal to the product of all the elements in the array other than itself. (Solve this in O(n) without division)**
+  
   var firstArray = [2, 2, 4, 1];
   var secondArray = [0, 0, 0, 2];
   var thirdArray = [-2, -2, -3, 2];
 
   //Write your program here
   
-  ```
- 
-<a name="array--intersection"></a><a name="1.6"></a>
-- **[1.6](#array--intersection) Find the intersection of two arrays. An intersection would be the common elements that exists within both arrays. In this case, these elements should be unique!**
-  ```javascript
+ */
+
+
+
+
+/*
+1.6 Find the intersection of two arrays. An intersection would be the common elements that exists within both arrays. In this case, these elements should be unique!**
+  
   var firstArray = [2, 2, 4, 1];
   var secondArray = [1, 2, 0, 2];
 
  
   //Write your program here
 
-  ```
+  */
 
 
 var firstArray = [2, 2, 4, 1];
 var secondArray = [1, 2, 0, 2];
 
-function arraysIntersection(a1,a2){
-    return  a1.filter(function(n) { return a2.indexOf(n) !== -1;});
+function arraysIntersection(a1, a2) {
+    return a1.filter(function (n) { return a2.indexOf(n) !== -1; });
 }
 
 arraysIntersection(firstArray, secondArray);
@@ -124,23 +120,23 @@ console.log(arraysIntersection(firstArray, secondArray));
 
 
 
-**[⬆ back to top](#table-of-contents)**
+//    Strings Programs
 
-## Strings
-<a name="string--reverse"></a><a name="2.1"></a>
-- **[2.1](#string--reverse) Given a string, reverse each word in the sentence**
-  `"Welcome to this Javascript Guide!"` should be become `"emocleW ot siht tpircsavaJ !ediuG"`
-  ```javascript
+
+
+/*    2.1 Given a string, reverse each word in the sentence**
+    `"Welcome to this Javascript Guide!"` should be become `"emocleW ot siht tpircsavaJ !ediuG"`
+  
   var string = "Welcome to this Javascript Guide!";
 
   //Write your program here
-  ```
+  */
 
 
 var string = "Welcome to this Javascript Guide!";
 
 function reverseBySeparator(string, separator) {
-  return string.split(separator).reverse().join(separator);
+    return string.split(separator).reverse().join(separator);
 }
 reverseBySeparator(string, "");
 
@@ -151,30 +147,29 @@ console.log(reverseBySeparator(string, ""));
 
 
 
-<a name="string--anagram"></a><a name="2.2"></a>
-- **[2.2](#string--anagram) Given two strings, return true if they are anagrams of one another**
+/*   2.2  Given two strings, return true if they are anagrams of one another**
   `"Mary" is an anagram of "Army"`
-  ```javascript
+  
   var firstWord = "Mary";
   var secondWord = "Army";
 
     //Write your program here
-  ```
+*/
 
 
- var anagrams = function(firstWord, secondWord) {
-    
+var anagrams = function (firstWord, secondWord) {
+
     if (firstWord.length != secondWord.length) return false;
-    
+
     firstWord = firstWord.split("").sort().join("");
     secondWord = secondWord.split("").sort().join("");
-    
+
     for (var i = 0; i < firstWord.length; i++) {
         if ((firstWord.charAt(i)) != (secondWord.charAt(i))) {
             return false;
         }
     }
-    
+
     return true;
 };
 console.log(anagrams("mary", "army"));
@@ -182,22 +177,21 @@ console.log(anagrams("mary", "army"));
 
 
 
-<a name="string--palindrome"></a><a name="2.3"></a>
-- **[2.3](#string--palindrome) Check if a given string is a palindrome**
+/*     2.3   Check if a given string is a palindrome**
   `"racecar" is a palindrome. "race car" should also be considered a palindrome. Case sensitivity should be taken into account`
-  ```javascript
+  
   isPalindrome("racecar"); // true
   isPalindrome("race Car"); // true
 
   //Write your program here
-  ```
+  */
 
 
 function isPalindrome(str) {
-  var regexp = /[\W_]/g;
-  var lowRegStr = str.toLowerCase().replace(regexp, '');
-  var reverseStr = lowRegStr.split('').reverse().join(''); 
-  return reverseStr === lowRegStr;
+    var regexp = /[\W_]/g;
+    var lowRegStr = str.toLowerCase().replace(regexp, '');
+    var reverseStr = lowRegStr.split('').reverse().join('');
+    return reverseStr === lowRegStr;
 }
 var result = isPalindrome("race Car");
 console.log(result);
@@ -205,8 +199,7 @@ console.log(result);
 
 
 
-<a name="string--isIsomorphic"></a><a name="2.3"></a>
-- **[2.4](#string--palindrome) Check if a given string is a isomorphic**
+/*     2.4   (#string--palindrome) Check if a given string is a isomorphic**
 
   ```
     For two strings to be isomorphic, all occurrences of a character in string A can be replaced with another character
@@ -223,41 +216,41 @@ console.log(result);
     isIsomorphic("kick", 'side'); // false
 
     //Write your program here
-  ```
+  */
 
 
 function isIsomorphic(firstString, secondString) {
 
     if (firstString.length !== secondString.length)
-    return false
+        return false
     var letter = {};
     for (var i = 0; i < firstString.length; i++) {
-      var letterA = firstString[i],letterB = secondString[i];
-      if (letter[letterA] === undefined) {
-        if(secondString.indexOf(letterB) < i){
+        var letterA = firstString[i], letterB = secondString[i];
+        if (letter[letterA] === undefined) {
+            if (secondString.indexOf(letterB) < i) {
+                return false;
+            } else {
+                letter[letterA] = letterB;
+            }
+        } else if (letter[letterA] !== letterB) {
+
             return false;
-        } else {
-            letter[letterA] = letterB;            
         }
-      } else if (letter[letterA] !== letterB) {
-       
-        return false;
-      }
     }
-   
+
     return true;
-  }
-  isIsomorphic("egg", 'add'); // true
-  isIsomorphic("paper", 'title'); // true
-  isIsomorphic("kick", 'side'); // false
+}
+isIsomorphic("egg", 'add'); // true
+isIsomorphic("paper", 'title'); // true
+isIsomorphic("kick", 'side'); // false
 console.log(isIsomorphic("egg", 'add'));
 
 
 
 
 
-  
-**[⬆ back to top](#table-of-contents)**
+
+/*
 
 ## Stacks and Queues
 
@@ -285,84 +278,81 @@ console.log(isIsomorphic("egg", 'add'));
   //Write your program here
   ```
  
-**[⬆ back to top](#table-of-contents)**
+*/
 
-## Recursion
-<a name="recursion--decimal-to-binary"></a><a name="4.1"></a>
-- **[4.1](#recursion--decimal-to-binary) Write a recursive function that returns the binary string of a given decimal number**
+//     Recursion Programs
+
+/*       4.1     Write a recursive function that returns the binary string of a given decimal number**
   Given `4` as the decimal input, the function should return `100`
 
-  ```javascript
+ 
   decimalToBinary(3); // 11
   decimalToBinary(8); // 1000
   decimalToBinary(1000); // 1111101000
 
   //Write your program here
-  ```
+  */
 
 
 function decimalToBinary(num) {
-    if(num >= 1) {
-      if (num % 2) {
-        return decimalToBinary((num - 1) / 2) + 1;
-      } else {
-        return decimalToBinary(num / 2) + 0;
-      }
+    if (num >= 1) {
+        if (num % 2) {
+            return decimalToBinary((num - 1) / 2) + 1;
+        } else {
+            return decimalToBinary(num / 2) + 0;
+        }
     } else {
-      return '';
+        return '';
     }
-  }
-  
-  decimalToBinary(3); // 11
-  decimalToBinary(8); // 1000
-  decimalToBinary(1000); // 1111101000
+}
+
+decimalToBinary(3); // 11
+decimalToBinary(8); // 1000
+decimalToBinary(1000); // 1111101000
 console.log(decimalToBinary(3));
 
 
 
 
 
- 
-<a name="recursion--binary-search"></a><a name="4.2"></a>
-- **[4.2](#recursion--binary-search) Write a recursive function that performs a binary search**
 
-  ```javascript
+/*    4.2    Write a recursive function that performs a binary search**
+
+  
   function recursiveBinarySearch(array, value, leftPosition, rightPosition) {
  
   }
-  ```
+  */
 
 
 
 
 function recursiveBinarySearch(array, value, leftPosition, rightPosition) {
-    
-    if (leftPosition > rightPosition) 
-    return -1;
+
+    if (leftPosition > rightPosition)
+        return -1;
 
     var middlePosition = Math.floor((leftPosition + rightPosition) / 2);
     if (array[middlePosition] === value) {
-      return middlePosition;
+        return middlePosition;
     }
     else if (array[middlePosition] > value) {
-      return recursiveBinarySearch(array, value, leftPosition, middlePosition - 1);
+        return recursiveBinarySearch(array, value, leftPosition, middlePosition - 1);
     }
     else {
-      return recursiveBinarySearch(array, value, middlePosition + 1, rightPosition);
+        return recursiveBinarySearch(array, value, middlePosition + 1, rightPosition);
     }
-  }
+}
 
 
 
 
 
-**[⬆ back to top](#table-of-contents)**
 
-## Numbers
-<a name="numbers--power-of-two"></a><a name="5.1"></a>
-- **[5.1](#numbers--power-of-two) Given an integer, determine if it is a power of 2. If so,
+//     Numbers
+/*     5.1Given an integer, determine if it is a power of 2. If so,
   return that number, else return -1. (0 is not a power of two)**
-  ```javascript
+ 
   isPowerOfTwo(4); // true
   isPowerOfTwo(64); // true
   isPowerOfTwo(1); // true
@@ -371,22 +361,22 @@ function recursiveBinarySearch(array, value, leftPosition, rightPosition) {
 
   //Write your program here:
  
-  ```
+*/
 
 
 function isPowerOfTwo(number) {
     return (number !== 0) && ((number & (number - 1)) === 0);
-  }
+}
 
 isPowerOfTwo(4); // true
-  isPowerOfTwo(64); // true
-  isPowerOfTwo(1); // true
-  isPowerOfTwo(0); // false
-  isPowerOfTwo(-1); // false
+isPowerOfTwo(64); // true
+isPowerOfTwo(1); // true
+isPowerOfTwo(0); // false
+isPowerOfTwo(-1); // false
 console.log(isPowerOfTwo(64));
 
 
 
- 
-**[⬆ back to top](#table-of-contents)**
+
+
 
